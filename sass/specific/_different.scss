@@ -1,0 +1,207 @@
+.block{
+  &-shadow{
+    @include shadow(0 0 30px rgba(0,0,0,.5));
+  }
+  &-video{
+    display: inline-block;
+    img{
+      @include resp-min(xs){
+        height: 260px;
+      }
+      
+    }
+    &-image{
+      font-size: 0;
+      @extend .relative;
+      @extend .block-shadow;
+    }
+    &-btnplay{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      margin-left: -25px;
+      margin-top: -25px;
+      border: none;
+      outline: none;
+      padding: 0;
+      @include borderR(100%);
+      background-color: setColor(corp);
+      @extend .transition;
+      &:hover{
+        background-color: #ff0000;
+      }
+      &:after{
+        @extend .pseudo;
+        left: 50%;
+        top: 50%;
+        width: 12px;
+        height: 16px;
+        margin-left: -4px;
+        margin-top: -8px;
+        @include bg("../img/arrowPlay.png");
+      }
+    }
+    &-duration{
+      @extend .medium;
+      @extend .text-center;
+      margin-top: 10px;
+      font-size: 24px;
+    }
+    @include resp-min(xs){
+      width: 370px;
+    }
+  }
+}
+.bigman{
+  font-size: 0;
+  @include resp-max(md){
+    text-align: center;
+    margin-top: 50px;
+    float: left;
+    width: 100%;
+    img{
+      max-width: 280px;
+    }
+    @include resp-min(xs){
+      img{
+        max-width: 400px;
+      }
+    }
+  }
+  @include resp-min(md){
+    position: absolute;
+    @include resp-max(lg){
+      right: 0;
+      width: 400px;
+      bottom: -220px;
+    }
+  }
+  @include resp-min(lg){
+    right: -260px;
+    top: -43px;
+  }
+}
+.bg-grey{
+  background-color: #262626;
+}
+.how{
+  &-wrapper{
+    background-color: #0a0b09;  
+    @include resp-min(lg){
+      @include bg("../img/telegramPhone.jpg");
+      &-inner{
+        @include shadow(0 0 200px rgba(11,11,12,.5));
+      }
+    }
+  }
+  &-inner{
+    position: relative;
+    &-wrap{
+      padding: 0;
+    }
+    &-text{
+      @extend .bg-grey;
+    }
+    &-image{
+      font-size: 0;
+      img{
+        height: 100%;
+        width: 100%;  
+      }
+    }
+    &-step,
+    &-link{
+      @extend .bold;
+    }
+    &-step{
+      
+      color: #000000;
+      max-height: 100%;
+      font-size: 100px;
+    }
+    &-link{
+      color: #fff;
+      text-decoration: none;
+      
+      line-height: 1;
+      @extend .transition;
+      &:after{
+        @extend .pseudo;
+        @extend .transition;
+        bottom: -10px;
+        
+        width: 65px;
+        height: 3px;
+        background-color: setColor(corp);
+      }
+      &:hover{
+        color: setColor(corp);
+        &:after{
+          @include transform(translateY(5px));
+        }
+      }
+    }
+    @include resp-max(sm){
+      text-align: center;
+      &-text{
+        padding-bottom: 41px;
+      }
+      &-step,
+      &-link{
+        display: block;
+        position: relative;
+      }
+      &-link{
+        font-size: 25px;
+        &:after{
+          left: 50%;
+          margin-left: -32.5px;
+        }
+      }
+    }
+    @include resp-min(sm){
+      height: 205px;
+      &-step,
+      &-link{
+        position: absolute;
+      }
+      &-step{
+        left: 15px;
+        top: 0;
+        font-size: 150px;
+      }
+      &-link{
+        left: 30px;
+        font-size: 30px;
+        margin-top: -15px;
+        left: 90px;
+        top: 50%;
+        &:after{
+          left: 0;
+        }
+      }
+      @include resp-max(md){
+
+      }
+    }
+    @include resp-min(md){
+      height: 288px;
+      &-step{
+        font-size: 212px;
+        letter-spacing: -15px;
+      }
+      &-link{
+        margin-top: -32px;
+        font-size: 45px;
+      }
+    }
+  }
+}
+.vmodal_iframe{
+  iframe{
+    width: 560px;
+    height: 315px;
+  }
+}

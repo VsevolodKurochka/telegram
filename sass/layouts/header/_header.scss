@@ -1,0 +1,12 @@
+.header {
+	@extend .cf;
+	@include bg('../img/header.jpg');
+	padding-top: 50px;
+	padding-bottom: 0;
+	overflow: hidden;
+	@include resp-min(md){
+		padding-top: 140px;
+		padding-bottom: 110px;
+		min-height: 980px;
+	}
+}
